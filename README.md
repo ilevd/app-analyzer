@@ -4,8 +4,11 @@ A Clojure app designed to find same apps in stores.
 
 ## Usage
 
-links.txt - list with apps links
-start.bat - to run app
+links.txt - содержит список ссылок
+
+start.bat - запуск приложения
+
+или из папки target: java -jar app-0.1.0-SNAPSHOT-standalone.jar links.txt
 
 Приложения считаются одинаковыми если два из трех условий равны 
 	строгое равенство по имени
