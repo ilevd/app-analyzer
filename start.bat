@@ -1,0 +1,1 @@
+java -jar target/app-0.1.0-SNAPSHOT-standalone.jar links.txt
