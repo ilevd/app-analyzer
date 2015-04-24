@@ -1,6 +1,6 @@
 ﻿# App-analyzer
 
-A program designed to find same apps in different stores: Google Play, Apple Store, WindowsPhone Score.
+A program designed to find same apps in different stores: Google Play, Apple Store, WindowsPhone Store.
 
 Input example:
 
@@ -53,16 +53,16 @@ Output example:
 You need Leiningen to build project.
 
 For start run jar file from target folder:
-java -jar app-0.1.0-SNAPSHOT-standalone.jar filename
+`java -jar app-0.1.0-SNAPSHOT-standalone.jar filename`
 
 Assigned file must consist list of apps links.
 
 ## Description
 
 Two apps are the same, if two of three conditions are satisfied:
-	apps name equality,
-	apps authors equality (with using Levenshtein distance),
-	apps descriptions equality (with using Levenshtein distance),
+1. apps name equality,
+2. apps authors equality (with using Levenshtein distance),
+3. apps descriptions equality (with using Levenshtein distance),
 
 To adding app to the group of same apps, program compare a field with all fields with same name in apps group.
 
