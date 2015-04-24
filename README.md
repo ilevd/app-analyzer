@@ -60,8 +60,11 @@ Assigned file must consist list of apps links.
 ## Description
 
 Two apps are the same, if two of three conditions are satisfied:
+
 1. apps name equality,
+
 2. apps authors equality (with using Levenshtein distance),
+
 3. apps descriptions equality (with using Levenshtein distance),
 
 To adding app to the group of same apps, program compare a field with all fields with same name in apps group.
