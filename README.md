@@ -1,24 +1,70 @@
-# App-analyzer
+﻿# App-analyzer
 
-A Clojure app designed to find same apps in stores.
+A program designed to find same apps in different stores: Google Play, Apple Store, WindowsPhone Score
+
+Input example:
+
+	https://itunes.apple.com/en/app/skype­for­iphone/id304878510?mt=8
+	https://itunes.apple.com/en/app/skype­for­ipad/id442012681?mt=8
+	https://play.google.com/store/apps/details?id=com.skype.raider&hl=en
+	http://www.windowsphone.com/en­us/store/app/skype/c3f8e570­68b3­4d6a­bdbb­c0a3f4360a51
+	https://play.google.com/store/apps/details?id=com.skype.android.access&hl=en
+	https://itunes.apple.com/en/app/skype­wifi/id444529922?mt=8
+	https://play.google.com/store/apps/details?id=com.skype.android.qik&hl=en
+	https://itunes.apple.com/us/app/skype­qik­group­video­messaging/id893994044?mt=8
+	https://play.google.com/store/apps/details?id=com.viber.voip&hl=en
+	https://itunes.apple.com/en/app/viber/id382617920?mt=8
+	https://play.google.com/store/apps/details?id=com.viber.voip&hl=en
+	https://play.google.com/store/apps/details?id=com.ketchapp.skyward&hl=en
+	https://itunes.apple.com/us/app/skyward/id943273841?mt=8
+	https://play.google.com/store/apps/details?id=cz.george.mecheche&hl=en
+
+Output example:
+
+	Skype
+	https://itunes.apple.com/en/app/skype­for­iphone/id304878510?mt=8
+	https://itunes.apple.com/en/app/skype­for­ipad/id442012681?mt=8
+	https://play.google.com/store/apps/details?id=com.skype.raider&hl=en
+	http://www.windowsphone.com/en­us/store/app/skype/c3f8e570­68b3­4d6a­bdbb­c0a3f4360a51
+
+	Skype WiFi
+	https://play.google.com/store/apps/details?id=com.skype.android.access&hl=en
+	https://itunes.apple.com/en/app/skype­wifi/id444529922?mt=8
+
+	Skype Qik: Group Video Chat
+	https://play.google.com/store/apps/details?id=com.skype.android.qik&hl=en
+	https://itunes.apple.com/us/app/skype­qik­group­video­messaging/id893994044?mt=8
+
+	Viber
+	https://play.google.com/store/apps/details?id=com.viber.voip&hl=en
+	https://itunes.apple.com/en/app/viber/id382617920?mt=8
+	https://play.google.com/store/apps/details?id=com.viber.voip&hl=en
+
+	Skyward
+	https://play.google.com/store/apps/details?id=com.ketchapp.skyward&hl=en
+	https://itunes.apple.com/us/app/skyward/id943273841?mt=8	
+
+	Skyward
+	https://play.google.com/store/apps/details?id=cz.george.mecheche&hl=en
+
 
 ## Usage
 
-links.txt - содержит список ссылок
+You need Leiningen to build project.
 
-start.bat - запуск приложения
+For start run jar file from target folder:
+java -jar app-0.1.0-SNAPSHOT-standalone.jar filename
 
-или из папки target: java -jar app-0.1.0-SNAPSHOT-standalone.jar links.txt
+Assigned file must consist list of apps links.
 
-Приложения считаются одинаковыми если два из трех условий удовлетворяются: 
-	равенство по названию приложения,
-	равенство авторов с использованием расстояния Левенштейна,
-	равенство описания с использованием расстояния Левенштейна.
+## Description
 
+Two apps are the same, if two of three conditions are satisfied
+	apps name equality
+	apps authors equality (with using Levenshtein distance)
+	apps descriptions equality (with using Levenshtein distance)
 
-Для внесения приложения в группу одинаковых, используется сравнение каждого поля с каждым полем приложений, входящими в эту группу.
-(т.е. если название приложения совпадает с названием одного из приложений в данной группе, 
-а автор приложения совпадает с автором другого приложения из этой группы, то приложение добавляется в данную группу)
+To adding app to the group of same apps, program comapare a field with all fields with same name in apps group.
 
 ## License
 
