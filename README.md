@@ -1,6 +1,6 @@
 ﻿# App-analyzer
 
-A program designed to find same apps in different stores: Google Play, Apple Store, WindowsPhone Score
+A program designed to find same apps in different stores: Google Play, Apple Store, WindowsPhone Score.
 
 Input example:
 
@@ -59,16 +59,16 @@ Assigned file must consist list of apps links.
 
 ## Description
 
-Two apps are the same, if two of three conditions are satisfied
-	apps name equality
-	apps authors equality (with using Levenshtein distance)
-	apps descriptions equality (with using Levenshtein distance)
+Two apps are the same, if two of three conditions are satisfied:
+	apps name equality,
+	apps authors equality (with using Levenshtein distance),
+	apps descriptions equality (with using Levenshtein distance),
 
-To adding app to the group of same apps, program comapare a field with all fields with same name in apps group.
+To adding app to the group of same apps, program compare a field with all fields with same name in apps group.
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2015
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
